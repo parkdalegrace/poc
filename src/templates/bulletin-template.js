@@ -9,8 +9,8 @@ const BulletinPage = ({ data, pageContext }) => {
     <Layout>
       <article>
         <header>
-        <h2>{bulletin.frontmatter.title}</h2>
-        <p>{bulletin.frontmatter.date}</p>
+        <h2 style={{textAlign: `center`}}>{bulletin.frontmatter.title}</h2>
+        <p style={{textAlign: `center`}}>{bulletin.frontmatter.date}</p>
         </header>
         <div dangerouslySetInnerHTML={{ __html: bulletin.html }} />
       </article>

@@ -35,6 +35,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
+          <hr/>
           © {new Date().getFullYear()}, Parkdale Grace Fellowship
         </footer>
       </div>

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const StreamPage = ({ data }) => {
@@ -13,9 +13,9 @@ const StreamPage = ({ data }) => {
     videoLink = `<a href="{stream.frontmatter.videoUrl}>video</a>`
   }
   let notesLink = ""
-  if (stream.frontmatter.notesPdf) {
-    notesLink = <Link To={`stream.frontmatter.notesPdf`}>Notes Pdf</Link>
-  }
+  //if (stream.frontmatter.notesPdf) {
+  //  notesLink = <Link To={`stream.frontmatter.notesPdf`}>Notes Pdf</Link>
+ // }
 
   return (
     <Layout>
@@ -42,7 +42,10 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
         audioUrl
         videoUrl
-        notesPdf
+        attachments {
+          publicURL
+          name
+        }
         tags
       }
     }

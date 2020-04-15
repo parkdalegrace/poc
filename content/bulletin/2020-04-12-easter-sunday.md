@@ -7,7 +7,7 @@ date: 2020-04-12T00:00:00.000Z
 *Join us Sunday morning at 11:00 a.m. to hear the Easter
 message delivered by Pastor Ron live on our Youtube channel here:*
 
-[https://youtu.be/6SJdkgdtFRc](https://youtu.be/6SJdkgdtFRc)
+[click here](https://youtu.be/6SJdkgdtFRc)
 
 __Office Information__ - We are still working in the office and will
 answer emails if you have any questions; the website is a great

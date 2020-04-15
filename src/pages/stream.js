@@ -15,7 +15,7 @@ export default ({ data }) => {
           date={node.frontmatter.date}
           audioUrl={node.frontmatter.audioUrl}
           videoUrl={node.frontmatter.videoUrl}
-          notesPdf={node.frontmatter.notesPdf}
+          notesUrl={node.frontmatter.attachments ? node.frontmatter.attachments[0].publicURL: null}
         />
       ))}
     </Layout>
@@ -24,10 +24,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "stream" } } }
-    ) {
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {templateKey: {eq: "stream"}}}) {
       totalCount
       edges {
         node {
@@ -40,7 +37,11 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             audioUrl
             videoUrl
-            notesPdf
+            attachments {
+              relativePath
+              publicURL
+              name
+            }
           }
         }
       }

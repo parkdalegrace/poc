@@ -64,6 +64,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify-cms`,
     /*
     {
       resolve: `gatsby-plugin-manifest`,

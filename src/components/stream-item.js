@@ -13,9 +13,9 @@ const StreamItem = props => (
       <li>
         <a href={props.videoUrl}>video</a>
       </li>
-      <li>
-        <Link To={props.notesPdf}>Notes Pdf</Link>
-      </li>
+        {props.notesUrl && (
+      <li> <Link to={props.notesUrl}>Notes Pdf</Link> </li>
+        )}
     </ul>
   </div>
 )
