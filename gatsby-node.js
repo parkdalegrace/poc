@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
         edges {
           node {
             id
@@ -41,18 +41,37 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  
+  const bulletins = result.data.allMarkdownRemark.edges.filter( edge => {
+    return edge.node.frontmatter.templateKey === 'bulletin'
+  })
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  bulletins.forEach((post, index) => {
+    let previous = index === bulletins.length - 1 ? null : bulletins[index + 1].node
+    let next = index === 0 ? null : bulletins[index - 1].node
+
     createPage({
-      path: node.fields.slug,
-      component: path.resolve(
-        `src/templates/${String(node.frontmatter.templateKey)}-template.js`
-      ),
+      path: post.node.fields.slug,
+      component: path.resolve(`src/templates/bulletin-template.js`),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        id: node.id,
-        slug: node.fields.slug,
+        id: post.node.id,
+        slug: post.node.fields.slug,
+        next,
+        previous
+      },
+    })
+  })
+  
+  const streams = result.data.allMarkdownRemark.edges.filter( edge => {
+    return edge.node.frontmatter.templateKey === 'stream'
+  })
+  streams.forEach((post) => {
+    createPage({
+      path: post.node.fields.slug,
+      component: path.resolve(`src/templates/stream-template.js`),
+      context: {
+        id: post.node.id,
+        slug: post.node.fields.slug,
       },
     })
   })

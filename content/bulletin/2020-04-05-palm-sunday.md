@@ -1,7 +1,7 @@
 ---
 templateKey: bulletin
-title: Easter Resurrection Sunday
-date: 2020-04-12T00:00:00.000Z
+title: Palm Sunday
+date: 2020-04-05T00:00:00.000Z
 ---
 
 *Join us Sunday morning at 11:00 a.m. to hear the Easter
@@ -24,17 +24,4 @@ directly (403.274.1601).
 
 __**Upcoming Events:**__
 
-(Note: These events may be cancelled due to COVID-19; we will
-keep you posted as the weeks go by.)
-
-* May 30th - Spring church clean up
-* June 27th - Church graduation
-
-__Sunday Messages__ – If you have missed any of the live streams they
-are available on the church website, on the homepage under
-“Videos”. They are posted weekly by Tuesday.
-
-__Prayer Requests__ – Since we are not meeting on Sundays please email
-your prayer requests in to the office at office@parkdalegrac.ca and
-we will pray for your request during the Wednesday night online
-prayer meeting and also add it to the weekly prayer bulletin.
+blah blah blah
