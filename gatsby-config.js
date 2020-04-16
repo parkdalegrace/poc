@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: `Parkdale Grace`,
-    description: ``,
     author: `Parkdale Grace fellowship`,
   },
   plugins: [
@@ -10,7 +9,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `uploads`,
-        path: `${__dirname}/static/img`,
+        path: `${__dirname}/static/media`,
       },
     },
     {
