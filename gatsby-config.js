@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Parkdale Grace`,
+    description: `Website for Parkdale Grace Fellowship`,
     author: `Parkdale Grace fellowship`,
   },
   plugins: [
